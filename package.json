@@ -1,0 +1,26 @@
+{
+  "name": "macro-reiis-video",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MACRO REIIS promotional video built with Remotion",
+  "scripts": {
+    "preview": "remotion studio src/index.ts",
+    "start": "npm run preview",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && remotion bundle src/index.ts",
+    "render": "remotion render src/index.ts MacroReiis out/macro-reiis.mp4 --codec=h264 --concurrency=2",
+    "still": "remotion still src/index.ts MacroReiis out/poster.png --frame=360"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.536",
+    "@remotion/transitions": "4.0.536",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.536"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "5.9.3"
+  }
+}
